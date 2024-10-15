@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>U.S. cities</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="styles.css">
+<style>
+
+body {font-family: "Amatic SC"}
+.mySlides {display: none}
+
+    .scroll-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 20px;
+    z-index: 100;
+    font-size: 30px;
+    border: none;
+    outline: none;
+    background-color: red;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+    display: none;
+    }
+    .scroll-to-top:hover {
+    background-color: grey;
+    }
+
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: red;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 110%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-in forwards; 
+}
+</style>
+<body>
+
+    <!-- Navbar -->
+    <div class="w3-top">
+    <div class="w3-bar w3-grey w3-card fade-in">
+        <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+        <a href="#home" class="w3-bar-item w3-button w3-padding-large">HOME</a>
+        <a href="#guide" class="w3-bar-item w3-button w3-padding-large w3-hide-small">INFO</a>
+        <a href="#tour" class="w3-bar-item w3-button w3-padding-large w3-hide-small">FACTS</a>
+        <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hide-small">CONTACT</a>
+        <div class="w3-dropdown-hover w3-hide-small">
+        <button class="w3-padding-large w3-button" title="More">MORE <i class="fa fa-caret-down"></i></button>     
+        <div class="w3-dropdown-content w3-bar-block w3-card-4">
+            <a href="#" class="w3-bar-item w3-button">Links</a>
+            <a href="#" class="w3-bar-item w3-button">Advertisement</a>
+            <a href="#" class="w3-bar-item w3-button">Social Medias</a>
+        </div>
+        </div>
+        <a href="javascript:void(0)" class="w3-padding-large w3-hover-white w3-hide-small w3-right"><i class="fa fa-search"></i></a>
+    </div>
+    </div>
+
+    <!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
+    <div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
+    <a href="#guide" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">BAND</a>
+    <a href="#tour" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">TOUR</a>
+    <a href="#contact" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">CONTACT</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">MERCH</a>
+    </div>
+
+    <!-- Page content -->
+    <div class="w3-content" style="max-width:2000px;margin-top:46px">
+
+    <!-- Automatic Slideshow Images -->
+    <div class="mySlides w3-display-container w3-center fade-in">
+        <img src="https://vastphotos.com/files/uploads/photos/11456/los-angeles-with-snowy-mountains-l.jpg?v=20230417113649" style="width: 100%">
+        <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
+        <h3><p style="color: white; font-size: 48px; font-family: Courier New; line-height: 0.5"><b>LOS ANGELES</b></p></h3>
+        <p style="color: white; font-size: 33px; font-family: Courier New; line-height: 0.1"><b>"The city of angels"</b></p>   
+        </div>
+    </div>
+    <div class="mySlides w3-display-container w3-center fade-in">
+        <img src="https://vastphotos.com/files/uploads/photos/10400/high-resolution-new-york-city-panorama-l.jpg?v=20220712073521" style="width:100%">
+        <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
+        <h3><p style="color: white; font-size: 48px; font-family: Courier New; line-height: 0.5"><b>NEW YORK</b></p></h3>
+        <p style="color: white; font-size: 33px; font-family: Courier New; line-height: 0.1"><b>"Concrete jungle where dreams are made of"</b></p>    
+        </div>
+    </div>
+    <div class="mySlides w3-display-container w3-center fade-in">
+        <img src="https://vastphotos.com/files/uploads/photos/10541/san-francisco-skyline-at-night-l.jpg?v=20241007175300" style="width:100%">
+        <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
+        <h3><p style="color: white; font-size: 48px; font-family: Courier New; line-height: 0.5"><b>SAN FRANCISCO</b></p></h3>
+        <p style="color: white; font-size: 33px; font-family: Courier New; line-height: 0.1"><b>"A golden handcuff with the key thrown away"</b></p>         
+    </div>
+    </div>
+    <div class="mySlides w3-display-container w3-center fade-in">
+        <img src="https://vastphotos.com/files/uploads/photos/10944/seattle-wallpaper-l.jpg?v=20220712073521" style="width:100%">
+        <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
+        <h3><p style="color: white; font-size: 48px; font-family: Courier New; line-height: 0.5"><b>SEATTLE</b></p></h3>
+        <p style="color: white; font-size: 33px; font-family: Courier New; line-height: 0.1"><b>"Cloudy with a chance of coffee"</b></p>                  
+    </div>
+    </div>
+    <div class="mySlides w3-display-container w3-center fade-in">
+        <img src="https://vastphotos.com/files/uploads/photos/10511/high-resolution-lincoln-memorial-photo-l.jpg?v=20220712073521" style="width:100%">
+        <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
+        <h3><p style="color: white; font-size: 48px; font-family: Courier New; line-height: 0.5"><b>WASHINGTON, D.C.</b></p></h3>
+        <p style="color: white; font-size: 33px; font-family: Courier New; line-height: 0.1"><b>"Hello, Mr. President"</b></p>   
+    </div>
+    </div>
+
+    <!-- The Info Section -->
+    <div class="w3-container w3-content w3-center w3-padding-64 fade-in" style="max-width:800px" id="guide">
+        <h2 class="w3-wide">THE FIVE MOST FAMOUS CITIES IN THE UNITED STATES</h2>
+        <p class="w3-opacity">We love U.S.A. &#128150</p>
+        <p class="w3-center">The United States is home to some of the world’s most iconic cities, each known for its unique characteristics. 
+        Los Angeles is the heart of the entertainment industry, with Hollywood and diverse cultural experiences.
+        New York City, the global hub for finance, arts, and culture, is famous for landmarks like the Statue of Liberty and Broadway. 
+        San Francisco, known for the Golden Gate Bridge and its tech-driven economy, offers scenic beauty and a vibrant, progressive atmosphere. 
+        Seattle, a tech powerhouse surrounded by natural beauty, is known for its innovation and coffee culture. 
+        Finally, Washington D.C., the nation’s capital, is steeped in political history, featuring monuments and museums that reflect the country’s democratic legacy.</p>
+        <div class="w3-row w3-padding-32">
+        <div class="w3-third">
+            <p>Beauty</p>
+            <img src="https://images.unsplash.com/photo-1542223616-9de9adb5e3e8?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="w3-round w3-margin-bottom" alt="Random Name" style="width:60%">
+        </div>
+        <div class="w3-third">
+            <p>Grace</p>
+            <img src="https://images.unsplash.com/photo-1657828919550-e3780d05102e?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="w3-round w3-margin-bottom" alt="Random Name" style="width:60%">
+        </div>
+        <div class="w3-third">
+            <p>Liberty</p>
+            <img src="https://images.unsplash.com/photo-1575139488320-2ac1da68a4a7?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="w3-round" alt="Random Name" style="width:60%">
+        </div>
+        </div>
+    </div>
+
+    <!-- The Facts Section -->
+    <div class="w3-black" id="tour">
+        <div class="w3-container w3-content w3-padding-64 fade-in" style="max-width:800px">
+            <h2 class="w3-wide w3-center">INTERESTING FACTS</h2>
+            <p class="w3-opacity w3-center">It is always fun to learn something new &#129299</p><br>
+    
+            <div class="w3-row-padding w3-padding-32" style="margin:0 -16px">
+                <div class="w3-margin-bottom">
+                    <img src="https://cdn.pixabay.com/photo/2014/10/22/17/34/los-angeles-498285_1280.jpg" alt="Los Angeles" style="width:100%" class="w3-hover-opacity">
+                    <div class="w3-container w3-white">
+                        <p><b>LOS ANGELES</b></p>
+                        <p class="w3-opacity">Did you know?</p>
+                        <p>L.A. is the only city in North America to have hosted the Summer Olympics twice, 
+                        in 1932 and 1984, and it's set to host them again in 2028!</p>
+                        <div class="tooltip">
+                            <button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('ticketModal').style.display='block'">Learn more...</button>
+                            <span class="tooltiptext">Click to learn more about Los Angeles!</span> <!-- Tooltip text -->
+                        </div>
+                    </div>
+                </div>
+                <div class="w3-margin-bottom">
+                    <img src="https://cdn.pixabay.com/photo/2016/10/28/13/09/usa-1777986_1280.jpg" alt="New York" style="width:100%" class="w3-hover-opacity">
+                    <div class="w3-container w3-white">
+                        <p><b>NEW YORK</b></p>
+                        <p class="w3-opacity">Did you know?</p>
+                        <p>The New York City Subway is one of the largest and oldest public transportation systems in the world, with over 470 stations, 
+                        making it possible to travel through the entire city underground!</p>
+                        <div class="tooltip">
+                            <button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('ticketModal').style.display='block'">Learn more...</button>
+                            <span class="tooltiptext">Click to learn more about New York!</span> <!-- Tooltip text -->
+                        </div>
+                    </div>
+                </div>
+                <div class="w3-margin-bottom">
+                    <img src="https://cdn.pixabay.com/photo/2019/06/13/11/22/golden-gate-bridge-4271364_1280.jpg" alt="San Francisco" style="width:100%" class="w3-hover-opacity">
+                    <div class="w3-container w3-white">
+                        <p><b>SAN FRANCISCO</b></p>
+                        <p class="w3-opacity">Did you know?</p>
+                        <p>The famous Golden Gate Bridge, which is often shrouded in fog, was originally going to be painted black and yellow, 
+                        but it was instead painted its iconic "International Orange" to enhance visibility in the foggy weather!</p>
+                        <div class="tooltip">
+                            <button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('ticketModal').style.display='block'">Learn more...</button>
+                            <span class="tooltiptext">Click to learn more about San Francisco!</span> <!-- Tooltip text -->
+                        </div>
+                    </div>
+                </div>
+                <div class="w3-margin-bottom">
+                    <img src="https://cdn.pixabay.com/photo/2019/01/31/11/32/mount-rainier-3966557_1280.jpg" alt="Seattle" style="width:100%" class="w3-hover-opacity">
+                    <div class="w3-container w3-white">
+                        <p><b>SEATTLE</b></p>
+                        <p class="w3-opacity">Did you know?</p>
+                        <p>Seattle is the birthplace of Starbucks, the world’s largest coffee chain, with its first store opening in Pike Place Market in 1971! 
+                        The city’s coffee culture has since become a big part of its identity.</p>
+                        <div class="tooltip">
+                            <button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('ticketModal').style.display='block'">Learn more...</button>
+                            <span class="tooltiptext">Click to learn more about Seattle!</span> <!-- Tooltip text -->
+                        </div>
+                    </div>
+                </div>
+                <div class="w3-margin-bottom">
+                    <img src="https://cdn.pixabay.com/photo/2017/05/31/19/56/united-states-2361405_1280.jpg" alt="Washington D.C." style="width:100%" class="w3-hover-opacity">
+                    <div class="w3-container w3-white">
+                        <p><b>WASHINGTON D.C.</b></p>
+                        <p class="w3-opacity">Did you know?</p>
+                        <p>The Library of Congress in Washington D.C. is the largest library in the world, 
+                        with over 170 million items in its collection, including books, recordings, photographs, maps, and manuscripts!</p>
+                        <div class="tooltip">
+                            <button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('ticketModal').style.display='block'">Learn more...</button>
+                            <span class="tooltiptext">Click to learn more about Washington D.C.!</span> <!-- Tooltip text -->
+                        </div>
+                    </div>
+                </div>    
+            </div>
+        </div>
+    </div>
+
+    <!-- Premium Subscription -->
+    <div id="ticketModal" class="w3-modal">
+        <div class="w3-modal-content w3-animate-bottom w3-card-4">
+        <header class="w3-container w3-grey w3-center w3-padding-32"> 
+            <span onclick="document.getElementById('ticketModal').style.display='none'" 
+        class="w3-button w3-xlarge w3-display-topright" style="color: black;">×</span>
+            <h2 class="w3-wide"><i class="w3-margin-right"></i>SUBSCRIBE FOR PREMIUM CONTENT</h2>
+        </header>
+        <div class="w3-container">
+            <p><label><i class="fa fa-globe"></i> Subscription (3.99 dollars/month):</label></p>
+            <input class="w3-input w3-border" type="text" placeholder="Name of a subscriber...">
+            <p><label><i class="fa fa-envelope"></i> Send to:</label></p>
+            <input class="w3-input w3-border" type="text" placeholder="Your email address...">
+            <button class="w3-button w3-block w3-grey w3-padding-16 w3-section w3-right">PAY &#128178</button>
+            <p class="w3-right">NEED <a href="#" class="w3-text-blue">HELP?</a></p>
+        </div>
+        </div>
+    </div>
+
+    <!-- The Contact Section -->
+    <div class="w3-container w3-content w3-padding-64 fade-in" style="max-width:800px" id="contact">
+        <h2 class="w3-wide w3-center">CONTACTS</h2>
+        <p class="w3-opacity w3-center">Did you see a mistake? Don’t hesitate to let us know &#128064</p>
+        <div class="w3-row w3-padding-32">
+        <div class="w3-col m6 w3-large w3-margin-bottom">
+            <i class="fa fa-map" style="width:30px"></i> Riga, Latvia<br>
+            <i class="fa fa-phone" style="width:30px"></i> Phone number: +371 22 555 777<br>
+            <i class="fa fa-user" style="width:30px"> </i> Email address: city.facts@whatevermail.com<br>
+        </div>
+        <div class="w3-col m6">
+            <form action="/action_page.php" target="_blank">
+            <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+                <div class="w3-half">
+                <input class="w3-input w3-border" type="text" placeholder="Full name..." required name="Full name...">
+                </div>
+                <div class="w3-half">
+                <input class="w3-input w3-border" type="text" placeholder="Email address..." required name="Email address...">
+                </div>
+            </div>
+            <input class="w3-input w3-border" type="text" placeholder="Message..." required name="Message...">
+            <button class="w3-button w3-grey w3-section w3-right" type="submit">SEND</button>
+            </form>
+        </div>
+        </div>
+    </div>
+    
+    <!-- End Page Content -->
+    </div>
+
+    <!-- Image -->
+    <img src="https://cdn.pixabay.com/photo/2023/10/18/00/59/mountain-8322610_1280.jpg" class="w3-image w3-greyscale-min" style="width:100%">
+
+    <!-- Footer -->
+    <footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge fade-in">
+    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-tiktok w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+    <p class="w3-medium">POWERED BY <a href="https://i.pinimg.com/originals/42/2b/82/422b822af69fec6f74761d6aa99221e0.jpg" target="_blank">yours.truly</a></p>
+    </footer>
+    
+    <script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+        behavior: 'smooth'
+            });
+        });
+    });
+    
+
+
+    var myIndex = 0;
+    carousel();
+
+    function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";  
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}    
+    x[myIndex-1].style.display = "block";  
+    setTimeout(carousel, 4000);    
+    }
+
+
+
+    function myFunction() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else { 
+        x.className = x.className.replace(" w3-show", "");
+    }
+    }
+
+
+
+    var modal = document.getElementById('ticketModal');
+    window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+    }
+
+
+
+    const scrollToTopButton = document.createElement('button');
+    scrollToTopButton.innerHTML = '↑';
+    scrollToTopButton.className = 'scroll-to-top';
+    document.body.appendChild(scrollToTopButton);
+
+    window.onscroll = function() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            scrollToTopButton.style.display = 'block';
+        } else {
+            scrollToTopButton.style.display = 'none';
+        }
+    };
+
+    scrollToTopButton.onclick = function() {
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
+    };
+
+
+
+    function fadeInElements() {
+        const elements = document.querySelectorAll('.fade-in');
+        elements.forEach(element => {
+            element.classList.add('show');
+        });
+    }
+
+
+    
+    window.onload = fadeInElements;
+    </script>
+
+    </body>
+</html>
